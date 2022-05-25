@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
-use App\Models\Siswa;
+use App\Models\Atlet;
 use App\Models\Pembayaran;
 
 class Petugas extends Model
@@ -13,9 +13,9 @@ class Petugas extends Model
     use HasFactory;
 
     protected $fillable = [
-    	'user_id',
-    	'kode_petugas',
-    	'nama_petugas',
+        'user_id',
+        'kode_petugas',
+        'nama_petugas',
         'jenis_kelamin',
     ];
 
@@ -26,7 +26,7 @@ class Petugas extends Model
 
     public function siswa()
     {
-    	return $this->hasMany(Siswa::class);
+        return $this->hasMany(Atlet::class);
     }
 
     public function pembayaran()

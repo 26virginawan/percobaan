@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\Petugas;
-use App\Models\Siswa;
+use App\Models\Atlet;
 
 class User extends Authenticatable
 {
@@ -19,22 +19,14 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'username',
-        'email',
-        'password',
-        'level',
-    ];
+    protected $fillable = ['username', 'email', 'password', 'level'];
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token'];
 
     /**
      * The attributes that should be cast to native types.
@@ -52,6 +44,6 @@ class User extends Authenticatable
 
     public function siswa()
     {
-        return $this->hasOne(Siswa::class);
+        return $this->hasOne(Atlet::class);
     }
 }

@@ -10,32 +10,32 @@ use App\Models\Spp;
 use App\Models\Petugas;
 use App\Models\Pembayaran;
 
-class Siswa extends Model
+class Atlet extends Model
 {
     use HasFactory;
 
-    protected $table = 'siswa';
+    protected $table = 'atlet';
 
     protected $fillable = [
         'user_id',
-    	'kode_siswa',
-    	'nisn',
-    	'nis',
-    	'nama_siswa',
+        'kode_siswa',
+        'foto',
+        'name',
+        'nisn',
+        'tgl_registrasi',
+        'tempat_lahir',
+        'tgl_lahir',
         'jenis_kelamin',
-    	'alamat',
-    	'no_telepon',
-    	'kelas_id',
+        'bb',
+        'tb',
+        'no_telepon',
+        'tingkat_sabuk',
+        'kelas',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function kelas()
-    {
-        return $this->belongsTo(Kelas::class);
     }
 
     public function petugas()

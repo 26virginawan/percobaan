@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Siswa;
+use App\Models\Atlet;
 
 class Spp extends Model
 {
@@ -12,13 +12,10 @@ class Spp extends Model
 
     protected $table = 'spp';
 
-    protected $fillable = [
-    	'tahun',
-    	'nominal',
-    ];
+    protected $fillable = ['tahun', 'nominal'];
 
     public function siswa()
     {
-    	return $this->hasMany(Siswa::class);
+        return $this->hasMany(Atlet::class);
     }
 }
